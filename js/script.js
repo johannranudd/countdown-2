@@ -25,7 +25,7 @@ const months = [
 const giveaway = document.querySelector('.giveaway');
 const countDownContainer = document.querySelector('.countdown-container');
 
-let futureDate = new Date(2021, 6, 15, 19, 55);
+let futureDate = new Date(2021, 6, 15, 19, 30);
 
 const year = futureDate.getFullYear();
 let month = futureDate.getMonth();
@@ -36,10 +36,9 @@ const hour = futureDate.getHours();
 const minutes = futureDate.getMinutes();
 
 giveaway.textContent = `Giveaway Ends On ${weekday}, ${day} ${month} 
-${year} ${hour}:0${minutes}pm`;
+${year} ${hour}:${minutes}pm`;
 
 // print to DOM
-
 function setTime() {
     setInterval(function() {
         const today = new Date().getTime();
@@ -52,9 +51,9 @@ function setTime() {
         let secondsLeft = Math.floor(distance % (1000 * 60) / (1000));
         
         if (distance < 0) {
-            futureDate.setDate(new Date().getDate() + 9);   
+            futureDate.setDate(new Date().getDate() + 10);
         }
-        
+
         countDownContainer.innerHTML = `<div class="countdown-box">
         <h3>${daysLeft}</h3>
         <p>DAYS</p>
