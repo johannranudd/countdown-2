@@ -23,38 +23,38 @@ body {
 
 .section-center {
     display: grid;
-
     width: 92%;
     margin: auto;
     max-width: 1200px;
-
     margin-top: 10%;
+}
+
+.image-container {
+    margin-bottom: 30px;
 }
 
 .image-container img {
     width: 100%;
 }
 
-
 .giveaway-container {
     display: grid;
     align-content: space-between;
-    margin: 30px 0;
-}
-
-.giveaway-container aside > *:not(.countdown-box) {
-    margin: 20px 0;
+    /* gap: 2rem; */
 }
 
 .text h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
     color: var(--clr-heading-blue);
 }
 
-.giveaway-container h4 {
+.text h4 {
     letter-spacing: .15rem;
 }
 
-.giveaway-container p {
+.text p {
+    margin: 30px 0;
     letter-spacing: .03rem;
 }
 
@@ -62,32 +62,21 @@ body {
 
 .countdown-container {
     display: flex;
-    align-items: center;
 }
 
-.countdown-box{
+.countdown-container div {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     width: 80px;
     height: 80px;
-    margin: 0 7px;
-
+    margin-right: 12px;
     background: var(--clr-box-blue);
     color: white;
 }
 
-.countdown-box:first-child {
-    margin-left: 0;
-}
-.countdown-box:last-child {
-    margin-right: 0;
-}
-
-
-.countdown-box h3 {
+.countdown-container h3 {
     font-size: 2rem;
 }
 
@@ -96,5 +85,11 @@ body {
     .section-center {
         grid-template-columns: repeat(2, 1fr);
         gap: 2rem;
+    }
+    .image-container {
+        margin: 0;
+    }
+    .giveaway-container {
+        margin: 20px 0;
     }
 }
