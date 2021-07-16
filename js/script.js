@@ -25,7 +25,8 @@ const months = [
 const giveaway = document.querySelector('.giveaway');
 const countDownContainer = document.querySelector('.countdown-container');
 
-let futureDate = new Date(2021, 6, 16, 11, 45, 0);
+
+let futureDate = new Date(2021, 6, 16, 12, 46, 0);
 
 function givawayTextFn() {
     const year = futureDate.getFullYear();
@@ -37,7 +38,7 @@ function givawayTextFn() {
     const minutes = futureDate.getMinutes();
     
     giveaway.textContent = `Giveaway Ends On ${weekday}, ${day} ${month} 
-    ${year} ${hour}:${minutes}pm`;
+    ${year} ${hour}:${minutes}`;
 }
 givawayTextFn();
 
@@ -46,7 +47,6 @@ givawayTextFn();
 
 // print to DOM
 function setTime() {
-    setInterval(function() {
         const today = new Date().getTime();
 
         let distance = futureDate.getTime() - today;
@@ -80,8 +80,11 @@ function setTime() {
         <p>SECS</p>
     </div>`;
 
-    }, 1000)
+    
 }
+
+//  this can also be wrapped around the content of setTime function
+let countdown = setInterval(setTime, 1000);
 
 window.addEventListener("DOMContentLoaded", function() {
     setInterval(function() {
